@@ -7,11 +7,9 @@ Author: Miguel Muñoz
 
 Date of Creation: 07 September 2022
 """
-import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits import mplot3d
+import numpy as np
 from sklearn.cluster import KMeans
-from sklearn.cluster import DBSCAN
 
 
 def main():
@@ -44,7 +42,7 @@ def main():
     plt.scatter(x, y, c=kmeans.labels_, s=0.1)
 
     result_folder = "samples/results/"
-    np.savetxt(result_folder + dataset.split(".")[0] + "_result_4_clusters.xyz", np.column_stack(
+    np.savetxt(result_folder + dataset.split("/")[0] + "_result_4_clusters.xyz", np.column_stack(
         (x, y, z, kmeans.labels_)), fmt='%1.4f')
 
 
